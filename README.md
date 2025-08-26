@@ -1,0 +1,2 @@
+# auto
+Gerenciador de pacotes 

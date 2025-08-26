@@ -1,14 +1,18 @@
 # Diretórios base
-AUTO_PREFIX="/usr/local/auto"   # onde será instalado
-AUTO_BUILD="/tmp/auto-build"    # diretório temporário de build
-AUTO_REPO="https://seu-repo-git.git"  # repo com receitas
+AUTO_PREFIX="/usr/local/auto"
+AUTO_BUILD="/tmp/auto-build"
+AUTO_REPO="https://seu-repo-git.git"
+
+# Diretório de logs
+AUTO_LOGS="./logs"
+mkdir -p "$AUTO_LOGS"
 
 # Flags de compilação padrão
 CFLAGS="-O2 -march=native"
 LDFLAGS=""
 MAKEFLAGS="-j$(nproc)"
 
-# Função para garantir diretórios
+# Inicializa diretórios
 init_dirs() {
     mkdir -p "$AUTO_PREFIX" "$AUTO_BUILD" "$AUTO_BUILD/src"
 }

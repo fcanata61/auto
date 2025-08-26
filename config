@@ -2,10 +2,9 @@
 AUTO_PREFIX="/usr/local/auto"
 AUTO_BUILD="/tmp/auto-build"
 AUTO_REPO="https://seu-repo-git.git"
-
-# Diretório de logs
 AUTO_LOGS="./logs"
-mkdir -p "$AUTO_LOGS"
+AUTO_PKGS="./packages"
+AUTO_TOOLCHAIN="./toolchain"
 
 # Flags de compilação padrão
 CFLAGS="-O2 -march=native"
@@ -14,5 +13,6 @@ MAKEFLAGS="-j$(nproc)"
 
 # Inicializa diretórios
 init_dirs() {
-    mkdir -p "$AUTO_PREFIX" "$AUTO_BUILD" "$AUTO_BUILD/src"
+    mkdir -p "$AUTO_PREFIX" "$AUTO_BUILD" "$AUTO_BUILD/src" \
+             "$AUTO_LOGS" "$AUTO_PKGS" "$AUTO_TOOLCHAIN"
 }
